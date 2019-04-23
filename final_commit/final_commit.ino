@@ -23,7 +23,6 @@ const int intr_gyro = 17;
 float variation;
 int duty;
 
- 
 volatile int pwm_value = 0;
 volatile int prev_time = 0;
 int reciever_pin = 4;
@@ -38,11 +37,7 @@ void falling() {
   attachInterrupt(reciever_pin, rising, RISING);
   pwm_value = micros()-prev_time;
   
-
 }
-
-
-
 
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
     #include "Wire.h"
@@ -269,7 +264,10 @@ string_labels = String("T,H,HI,CO:  ");
     listDir(SD, "/", 0);
     removeDir(SD, "/mydir");
     createDir(SD, "/my_data");
-//    listDir(SD, "/", 0);
+ 
+//  these are the file operations that can be performed
+
+ //    listDir(SD, "/", 0);
 //    removeDir(SD, "/mydir");
 //    listDir(SD, "/", 2);
 //    writeFile(SD, "/hello.txt", "Hello ");
@@ -317,8 +315,6 @@ sensorValue = analogRead(SENSOR);
     mpu.initialize();
 
     // verify connection
-   
-    
 /*
     // wait for ready
     Serial.println(F("\nSend any character to begin DMP programming and demo: "));
@@ -329,16 +325,9 @@ sensorValue = analogRead(SENSOR);
     // load and configure the DMP
    
     devStatus = mpu.dmpInitialize();
-
-    // supply your own gyro offsets here, scaled for min sensitivity
-//     initial offsets
-//    mpu.setXGyroOffset(220);
-//    mpu.setYGyroOffset(76);
-//    mpu.setZGyroOffset(-85);
-//    mpu.setZAccelOffset(1788); // 1688 factory default for my test chip
-//new offsets
-
- mpu.setXGyroOffset(73);
+ 
+//  supply your own gyro offsets here
+    mpu.setXGyroOffset(73);
     mpu.setYGyroOffset(1);
     mpu.setZGyroOffset(-75);
     mpu.setZAccelOffset(1335); // 1688 factory default for my test chip
@@ -426,15 +415,10 @@ void loop() {
     // wait for MPU interrupt or extra packet(s) available
     while (!mpuInterrupt && fifoCount < packetSize) {
         // other program behavior stuff here
-        // .
-        // .
-        // .
+     
         // if you are really paranoid you can frequently test in between other
         // stuff to see if mpuInterrupt is true, and if so, "break;" from the
         // while() loop to immediately process the MPU data
-        // .
-        // .
-        // .
     }
 
     // reset interrupt flag and get INT_STATUS byte
@@ -490,8 +474,4 @@ else{
   get_sensor_data();
     
 } 
-
-
-
-
 
