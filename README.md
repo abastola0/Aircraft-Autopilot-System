@@ -9,4 +9,6 @@ This repository presents the Autopilot System with features like Gyro Stabilizat
 ![alt text](https://github.com/abastola0/Aircraft-Autopilot-System/blob/master/62615605_442545339641811_1008977393668325376_n.jpg)
 ![alt text](https://github.com/abastola0/Aircraft-Autopilot-System/blob/master/64362822_701096586996701_3484851866003570688_n.jpg)
 
+Also,plese checkout the video by clicking on the thumbnail below:
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/G6Gji1wh_vU/0.jpg)](https://www.youtube.com/watch?v=G6Gji1wh_vU)
